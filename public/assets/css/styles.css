@@ -75,6 +75,10 @@ body {
   
   .addBurger {
     border-radius: 5px solid red;
+    color: white; 
+    background-color: red;
 
   }
+
+  
   
