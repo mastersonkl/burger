@@ -1,8 +1,10 @@
 body {
     background-image: url(../img/burgertall.jpg);
-    background-repeat: repeat-y;
-    filter: blur(8px);
-    height: 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    border: 3px solid #f1f1f1;
+    text-align: center;
   }
   h1,
   h2,
@@ -12,22 +14,26 @@ body {
   p,
   li,
   ul {
-    color: black;
+    color: white;
+    font-weight: 70px;
   }
   
   h1 {
     font-size: 27px;
+    color: white;
   }
   
   h2 {
     font-size: 22px;
-    color: rgb(0, 0, 0);
+    color: red;
+    background-color: white;
   }
   
   h3,
   h4,
   h5 {
     font-size: 22px;
+    color: white;
   }
   
   li,
@@ -45,11 +51,11 @@ body {
   }
   
   .wrapper {
-    background-color: rgba(76, 103, 138, 0.76);
+    background-color: blue;
   }
   
   .thumbnail {
-    size: 99px;
+    size: 50px;
   }
   
   .deleteButton {
@@ -58,16 +64,17 @@ body {
   }
   
   #targetContainer {
-    border: 1px solid black;
+    border: 1px solid red;
     border-radius: 35px;
     background-color: white (0,0,0, 0.4);
   }
   
   .devourButton {
-    border: 1px solid black;
+    border: 1px solid red;
   }
   
   .addBurger {
-    border-radius: 5px;
+    border-radius: 5px solid red;
+
   }
   
