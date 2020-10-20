@@ -1,0 +1,73 @@
+body {
+    background-image: url(../img/burgertall.jpg);
+    background-repeat: repeat-y;
+    filter: blur(8px);
+    height: 100%; 
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  li,
+  ul {
+    color: black;
+  }
+  
+  h1 {
+    font-size: 27px;
+  }
+  
+  h2 {
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+  }
+  
+  h3,
+  h4,
+  h5 {
+    font-size: 22px;
+  }
+  
+  li,
+  ul {
+    font-size: 15px;
+  }
+  
+  body {
+    padding: 35px;
+  }
+  
+  .wrapper {
+    height: 100%;
+    padding: 27px;
+  }
+  
+  .wrapper {
+    background-color: rgba(76, 103, 138, 0.76);
+  }
+  
+  .thumbnail {
+    size: 99px;
+  }
+  
+  .deleteButton {
+    background-color: rgb(201, 5, 5);
+    margin: 25px;
+  }
+  
+  #targetContainer {
+    border: 1px solid black;
+    border-radius: 35px;
+    background-color: white (0,0,0, 0.4);
+  }
+  
+  .devourButton {
+    border: 1px solid black;
+  }
+  
+  .addBurger {
+    border-radius: 5px;
+  }
+  
