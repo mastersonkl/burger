@@ -1,46 +1,84 @@
-const connection = require("./connection");
+const connection = require("./connection.js");
 
-var orm = {
-    all: function (tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput;
-        connection.query(queryString, function (err, result) {
-            if (err) throw err;
-            cb(result);
-        });
-    },
-
-    firstInsert: function (tableInput, val1, cb) {
-        connection.query(
-            "INSERT INTO " + tableInput + "(burger_name) VALUES ('" + val1 + "');"
-        ),
-            function (err, result) {
-                if (err) throw err;
-            };
+function generateQuestion(num) {
+    var arr = [];
+    for (var i = 0; i < num; i++) {
+      arr.push("?").toString();
+    }
+    return arr;
+  }
+  
+  function objectToSql(ob) {
+    var arr = [];
+    for (var key in ob) {
+      var value = ob[key];
+      if (Object.hasOwnProperty.call(ob, key)) {
+        if (typeof value === "string" && value.indexOf(" ") >= 0) {
+          value = "'" + value + "'";
+        }
+        arr.push(key + "=" + value).toString();
+      }
+    }
+    return arr;
+  }
+  
+  var orm = {
+    selectAll: function (tableInput, cb) {
+      var queryString = "SELECT * FROM " + tableInput + ";";
+      connection.query(queryString, function (err, result) {
+        if (err) throw err;
         cb(result);
+      });
     },
-
-    firstUpdate: function (tableInput, condition, cb) {
-        var queryString = "Update ?? SET devoured=true WHERE ?";
-        connection.query(queryString, [tableInput, condition], function (
-            err,
-            result
-        ) {
-            if (err) throw err;
-            cb(result);
-        });
+  
+    firstInsert: function (table, cols, vals, cb) {
+      var queryString = "INSERT INTO " + table;
+  
+      queryString += " (";
+      queryString += cols.toString();
+      queryString += ") ";
+      queryString += "VALUES (";
+      queryString += generateQuestion(vals.length);
+      queryString += ") ";
+  
+      connection.query(queryString, vals, function (err, result) {
+        if (err) throw err;
+        cb(result);
+      });
     },
-
-
-    firstDelete: function (tableInput, condition, cb) {
-        connection.query(
-            "DELETE FROM " + tableInput + " WHERE id= " + condition + ";",
-            function (err, result) {
-                if (err) throw err;
-                cb(result);
-            }
-        );
+  
+    firstUpdate: function (table, objColVals, condition, cb) {
+      var queryString = "UPDATE " + table;
+  
+      queryString += " SET ";
+      queryString += objectToSql(objColVals);
+      queryString += " WHERE ";
+      queryString += condition;
+  
+      connection.query(queryString, function (err, result) {
+        if (err) throw err;
+        cb(result);
+      });
     },
-};
-
-
-module.exports = orm;
+  
+    delete: function (table, condition, cb) {
+      var queryString = "DELETE FROM " + table;
+      queryString += " WHERE ";
+      queryString += condition;
+  
+      connection.query(queryString, function (err, result) {
+        if (err) throw err;
+        cb(result);
+      });
+    },
+  
+    deleteAll: function (table, cb) {
+      var queryString = "DELETE FROM " + table;
+      connection.query(queryString, function (err, result) {
+        if (err) throw err;
+        cb(result);
+      });
+    },
+  };
+  
+  module.exports = orm;
