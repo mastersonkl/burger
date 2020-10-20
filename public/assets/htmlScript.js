@@ -1,5 +1,4 @@
-
-//delete
+//devour
 $(function () {
     $(".dbtn").on("click", function (event) {
         var id = $(this).data("id");
@@ -28,6 +27,7 @@ $(function () {
             location.reload();
         });
     });
+
     //delete
     $(".deleteButton").on("click", function (event) {
         event.preventDefault();
