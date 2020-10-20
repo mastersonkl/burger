@@ -47,7 +47,7 @@ function generateQuestion(num) {
       });
     },
   
-    updateOne: function (table, objColVals, condition, cb) {
+    firstUpdate: function (table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
   
       queryString += " SET ";
