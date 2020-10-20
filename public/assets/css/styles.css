@@ -3,7 +3,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     color: white;
-    border: 3px solid #f1f1f1;
     text-align: center;
   }
   h1,
@@ -59,8 +58,9 @@ body {
   }
   
   .deleteButton {
-    background-color: rgb(201, 5, 5);
+    background-color: red;
     margin: 25px;
+    color: white;
   }
   
   #targetContainer {
@@ -71,6 +71,7 @@ body {
   
   .devourButton {
     border: 1px solid red;
+    color: red;
   }
   
   .addBurger {
