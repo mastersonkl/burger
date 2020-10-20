@@ -31,7 +31,7 @@ function generateQuestion(num) {
       });
     },
   
-    firstInsert: function (table, cols, vals, cb) {
+    insertOne: function (table, cols, vals, cb) {
       var queryString = "INSERT INTO " + table;
   
       queryString += " (";
@@ -47,7 +47,7 @@ function generateQuestion(num) {
       });
     },
   
-    firstUpdate: function (table, objColVals, condition, cb) {
+    updateOne: function (table, objColVals, condition, cb) {
       var queryString = "UPDATE " + table;
   
       queryString += " SET ";
