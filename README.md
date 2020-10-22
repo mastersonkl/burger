@@ -28,4 +28,4 @@ You can install this program by cloning it to your local machine by running `git
 This application is deployed on Heroku and can be found here: https://burger-burger0.herokuapp.com/
 
 
-![](./imgs/burger01.png)
+![](./imgs/burger02.png)
