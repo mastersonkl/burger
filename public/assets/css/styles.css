@@ -2,71 +2,35 @@ body {
     background-image: url(../img/burgertall.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    color: white;
+    background-color: black;
     text-align: center;
+    padding: 35px;
   }
-  h1,
+  
   h2,
-  h3,
-  h4,
-  h5,
-  p,
-  li,
   ul {
     color: white;
     font-weight: 70px;
   }
   
-  h1 {
-    font-size: 27px;
-    color: white;
-  }
   
   h2 {
     font-size: 22px;
     color: red;
     background-color: white;
   }
+   
+ p {
+   background-color: white;
+   color: red;
+   font-weight: 150px;
+ }
   
-  h3,
-  h4,
-  h5 {
-    font-size: 22px;
-    color: white;
-  }
-  
-  li,
-  ul {
-    font-size: 15px;
-  }
-  
-  body {
-    padding: 35px;
-  }
-  
-  .wrapper {
-    height: 100%;
-    padding: 27px;
-  }
-  
-  .wrapper {
-    background-color: blue;
-  }
-  
-  .thumbnail {
-    size: 50px;
-  }
-  
+ 
   .deleteButton {
     background-color: red;
     margin: 25px;
     color: white;
-  }
-  
-  #targetContainer {
-    border: 1px solid red;
-    border-radius: 35px;
-    background-color: white (0,0,0, 0.4);
   }
   
   .devourButton {
